@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cl-footer [class^="cl-internal"]{
+    display:none;
+}
+.cl-userButtonPopoverFooter [class^="cl-internal"] {
+  display: none;
+}
+code,ol {
+  white-space: break-spaces;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+ol, ul, menu {
+  list-style: revert;
+  padding:revert;
+  margin:revert;
+}
+
+ div.ql-editor{
+  max-height:20rem !important;
+}
+
+@media only screen and (max-width: 475px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (min-width: 475px) {
+  html {
+    font-size: 85%;
+  }
+}
+

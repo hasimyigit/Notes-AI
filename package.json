@@ -1,0 +1,43 @@
+{
+  "name": "notes-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.3.2",
+    "@google/generative-ai": "^0.16.0",
+    "@hookform/resolvers": "^3.9.0",
+    "@prisma/client": "^5.18.0",
+    "firebase": "^10.13.1",
+    "framer-motion": "^11.3.28",
+    "fs": "^0.0.1-security",
+    "lucide-react": "^0.427.0",
+    "markdown-to-jsx": "^7.4.7",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
+    "react-quill": "^2.0.0",
+    "svix": "^1.30.0",
+    "tesseract.js": "^5.1.1",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.1",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "prisma": "^5.18.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
