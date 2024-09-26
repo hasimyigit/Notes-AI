@@ -6,7 +6,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 
 const Search = ({ totalNotes }: { totalNotes: number }) => {
   
-  const { replace } = useRouter();
+  const { replace,prefetch } = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const qLimit = searchParams.get("limit");
@@ -16,22 +16,19 @@ const Search = ({ totalNotes }: { totalNotes: number }) => {
     Number(qLimit) > 1 ? Number(qLimit) : 1
   );
   const [offSet, setOffSet] = useState(0);
- 
+
   useEffect(()=>{
-    if(!qLimit){
+    if(!qLimit || limit > 1){
       const params = new URLSearchParams(searchParams);
       params.set("limit", limit.toString());
+      const preParams = new URLSearchParams(searchParams);
+      preParams.set("limit", (limit+1).toString());
       replace(`${pathname}?${params}`, { scroll: false });
+      prefetch(`${pathname}?${preParams}`);
     }
-  },[qLimit])
+  },[qLimit, limit])
   
-  useEffect(() => {
-    if (limit > 1) {
-      const params = new URLSearchParams(searchParams);
-      params.set("limit", limit.toString());
-      replace(`${pathname}?${params}`, { scroll: false });
-    }
-  }, [limit]);
+
 
   useEffect(() => {
     const handleScroll = () => {
